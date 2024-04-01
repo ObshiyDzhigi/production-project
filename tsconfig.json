@@ -9,6 +9,7 @@
     "module": "ESNext",
     // В какую спецификацию компилируем: для поддержки большинства браузеров
     "target": "es5",
+
     "jsx": "react-jsx",
     // Компилятор будет обрабатывать не только TS ФАЙЛЫ но и JS файлы
     "allowJs": true,
@@ -17,6 +18,10 @@
     "paths": {
       "*": ["./src/*"]
     },
+    "include": [
+      "./src/**/*.ts", // Включаем все TypeScript файлы в папке src
+      "./.eslintrc.js" // Включаем файл .eslintrc.js
+    ],
     // esModuleInterop позволяет работать с пакетами,которые используют common js как с обычными пакетами с помощью import (require() module.exports)==common js
     "esModuleInterop": true, // Добавляет более привычные импорты
     "allowSyntheticDefaultImports": true  // Добавляет более привычные импорты
@@ -24,6 +29,6 @@
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJs"
-    }
-  }
+    },
+  },
 }

@@ -1,4 +1,4 @@
-import React, { Suspense, useContext, useState } from 'react'
+import React, {Suspense, useContext, useEffect, useState} from 'react'
 import './styles/index.scss'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import { useTheme } from 'app/providers/ThemeProvider'
@@ -13,6 +13,7 @@ import { Button } from 'shared/ui/Button/Button'
 
 const App = () => {
   const { theme } = useTheme()
+
   return (
         <div className={classNames('app', {}, [theme])}>
             <BrowserRouter>

@@ -7,7 +7,6 @@ import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
 
 interface SidebarProps {
   className?: string
-
 }
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const Sidebar = ({ className }: SidebarProps) => {
@@ -18,6 +17,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   }
   return (
         <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             <button onClick={onToggle}>toggle</button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />

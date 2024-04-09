@@ -5,13 +5,16 @@ module.exports = {
   },
   extends: [
     "standard-with-typescript",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:i18next/recommended"
   ],
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
       env: {
-        node: true
+        node: true,
+
+        jest: true
       },
       parserOptions: {
         sourceType: 'script'
@@ -24,9 +27,11 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    "react"
+    "react",
+    "i18next"
   ],
   rules: {
+    'no-trailing-spaces': ["off"],
     quotes: 'off',
     '@typescript-eslint/quotes': 'off',
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
@@ -38,9 +43,14 @@ module.exports = {
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     "@typescript-eslint/explicit-function-return-type": "off",
-
+    "no-multi-spaces": [2, { exceptions: { VariableDeclaration: true } }],
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'no-underscore-dangle': 'off'
+    'no-underscore-dangle': 'off',
+    'i18next/no-literal-string': ['error', { markupOnly: true }]
+
+  },
+  globals: {
+    __IS_DEV__: true
   }
 }

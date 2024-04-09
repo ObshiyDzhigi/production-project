@@ -13,8 +13,8 @@ export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPl
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css'
     }),
-    new webpack.DefinePlugin({
-      __IS_DEV__: JSON.stringify(isDev)
+    new webpack.DefinePlugin({ //  определения глобальных констант
+      __IS_DEV__: JSON.stringify(isDev) // Это преобразует значение переменной isDev в строку JSON. Это необходимо, так как плагин DefinePlugin ожидает, чтобы значения были строками кода JavaScript.
     }),
     new webpack.HotModuleReplacementPlugin()
   ]

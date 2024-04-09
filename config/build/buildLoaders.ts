@@ -35,11 +35,11 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         loader: "css-loader",
         options: {
           modules: {
-            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-            localIdentName: isDev
+            auto: (resPath: string) => Boolean(resPath.includes('.module.')), // Это свойство определяет, будут ли CSS модули автоматически применяться к файлам.
+            localIdentName: isDev 
               ? '[path][name]__[local]--[hash:base64:5]'
               : '[hash:base64:8]'
-          }
+          } // Это свойство определяет формат имен классов для CSS модулей.
         }
       },
       // Compiles Sass to CSS
